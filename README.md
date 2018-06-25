@@ -1,1 +1,1 @@
-"demo-microservices" 
+A simple microservice created with Spring Boot(https://spring.io/guides/gs/spring-boot/) and Spring Data(https://spring.io/guides/gs/accessing-data-jpa/)
