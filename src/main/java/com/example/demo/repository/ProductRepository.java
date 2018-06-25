@@ -8,8 +8,6 @@ import java.util.List;
 
 public interface ProductRepository extends CrudRepository<Product, Integer> {
 
-    List<Product> findByProductId(@Param("id") Integer id);
-
-    List<Product> findProductByLastName(@Param("name") String name);
+    List<Product> findProductByName(@Param("name") String name);
 
 }

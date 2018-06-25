@@ -1,31 +1,20 @@
-package com.example.demo.entity;
+package com.example.demo.dto;
 
-import javax.persistence.*;
+import com.example.demo.entity.Product;
+
 import java.util.Objects;
 
-@Entity
-public class Product {
+public class ProductDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
     private String name;
     private String description;
 
-    public Product() {
+    public ProductDTO() {
     }
 
-    public Product(String name, String description) {
+    public ProductDTO(String name, String description) {
         this.name = name;
         this.description = description;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -48,21 +37,20 @@ public class Product {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Product product = (Product) o;
-        return id == product.id;
+        ProductDTO that = (ProductDTO) o;
+        return description == that.description &&
+                Objects.equals(name, that.name);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(id);
+        return Objects.hash(name, description);
     }
 
     @Override
     public String toString() {
         return "Product{" +
-                "id=" + id +
                 ", name=" + name + "}";
     }
 }
-
